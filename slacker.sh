@@ -9,17 +9,16 @@ read -p 'SlackBuild URL: ' SBURL
 read -p 'Full path to storage directory (i.e. /home/user/directory): ' SBDIR
 read -p 'Project directory (i.e. bar-1.1): ' PRDIR
 
-# Collect version number.
-VNUM=$(awk -F 'VERSION' '{print $2}' $FNAME.info | cut -f 2 -d '"' | tr -d '\n')
-
-# Collect download URL
-SBURL=$(awk -F 'DOWNLOAD' '{print $2}' $FNAME.info | cut -f 2 -d '"' | tr -d '\n')
-
 # Create storage directory and use URL to get files.
 mkdir $SBDIR/$PRDIR
 cd $SBDIR/$PRDIR
 FNAME=$(basename "$SBURL")
 wget $SBURL
+
+# Collect version number.
+VNUM=$(awk -F 'VERSION' '{print $2}' $FNAME.info | cut -f 2 -d '"' | tr -d '\n')
+# Collect download URL
+SBURL=$(awk -F 'DOWNLOAD' '{print $2}' $FNAME.info | cut -f 2 -d '"' | tr -d '\n')
 
 # Use tar to decompress files and drop into directory.
 tar -xzf $FNAME
