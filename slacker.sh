@@ -35,5 +35,5 @@ chmod +x $FNAME.SlackBuild
 ./$FNAME.SlackBuild
 
 # Run installpkg and move file into project directory.
-installpkg /tmp/$FNAME-$VNUM-x86_64-1_SBo.tgz
-mv /tmp/$FNAME-$VNUM-x86_64-1_SBo.tgz .
+installpkg /tmp/$FNAME-$VNUM-*-*_SBo.tgz
+mv /tmp/$FNAME-$VNUM-*-*_SBo.tgz .
