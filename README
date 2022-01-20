@@ -1,0 +1,6 @@
+Slacker v0.0.2
+==============
+A script to download files from slackbuilds.org.
+Mostly useless as sbopkg exists.
+
+TODO: Add recursive dependency downloading?
